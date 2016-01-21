@@ -1,0 +1,24 @@
+
+*** Settings ***
+Library  Selenium2Library
+Suite Setup  Go to homepage
+Suite Teardown  Close All Browsers
+
+*** Variables ***
+${HOMEPAGE}  http://www.amazon.ca/
+${BROWSER}  chrome
+
+*** Test Cases ***
+Google devops and find eficode
+    Google and check results    book  It's a Book
+
+*** Keywords ***
+Google and check results
+    [Arguments]  ${searchkey}   ${result}
+    Input Text  id=twotabsearchtextbox     ${searchkey}
+    Click Button  XPath=.//*[@id='nav-search']/form/div[2]/div/input
+    wait until page contains    ${result}
+
+Go to homepage
+    Open browser    ${HOMEPAGE}    ${BROWSER}
+    Set Selenium Implicit Wait  5

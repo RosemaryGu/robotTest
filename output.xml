@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160120 22:27:39.618" generator="Robot 3.0 (Python 2.7.10 on darwin)">
+<suite source="/Users/Rosemary/PycharmProjects/robotTest/robot.txt" id="s1" name="Robot">
+<kw type="setup" name="Go to homepage">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${HOMEPAGE}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20160120 22:27:39.775" level="INFO">Opening browser 'chrome' to base url 'http://www.amazon.ca/'</msg>
+<status status="PASS" endtime="20160120 22:27:50.846" starttime="20160120 22:27:39.774"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20160120 22:27:50.848" starttime="20160120 22:27:50.846"></status>
+</kw>
+<status status="PASS" endtime="20160120 22:27:50.848" starttime="20160120 22:27:39.774"></status>
+</kw>
+<test id="s1-t1" name="Google devops and find eficode">
+<kw name="Google and check results">
+<arguments>
+<arg>book</arg>
+<arg>It's a Book</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>${searchkey}</arg>
+</arguments>
+<msg timestamp="20160120 22:27:50.850" level="INFO">Typing text 'book' into text field 'id=twotabsearchtextbox'</msg>
+<status status="PASS" endtime="20160120 22:27:50.934" starttime="20160120 22:27:50.849"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>XPath=.//*[@id='nav-search']/form/div[2]/div/input</arg>
+</arguments>
+<msg timestamp="20160120 22:27:50.935" level="INFO">Clicking button 'XPath=.//*[@id='nav-search']/form/div[2]/div/input'.</msg>
+<status status="PASS" endtime="20160120 22:27:53.156" starttime="20160120 22:27:50.935"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<status status="PASS" endtime="20160120 22:27:53.183" starttime="20160120 22:27:53.157"></status>
+</kw>
+<status status="PASS" endtime="20160120 22:27:53.183" starttime="20160120 22:27:50.849"></status>
+</kw>
+<status status="PASS" endtime="20160120 22:27:53.183" critical="yes" starttime="20160120 22:27:50.848"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20160120 22:27:53.254" starttime="20160120 22:27:53.184"></status>
+</kw>
+<status status="PASS" endtime="20160120 22:27:53.254" starttime="20160120 22:27:39.620"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Robot" pass="1">Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
